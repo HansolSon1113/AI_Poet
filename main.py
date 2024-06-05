@@ -78,7 +78,7 @@ router_prompt = PromptTemplate(
     output_parser=RouterOutputParser(),
 )
 
-router_chain = LLMRouterChain.from_llm(llm, router_prompt)
+router_chain = LLMRouterChain.from_llm(chatModel, router_prompt)
 chain = MultiPromptChain(router_chain=router_chain, 
                          destination_chains=destination_chains, 
                          default_chain=default_chain, verbose=True)
