@@ -92,7 +92,7 @@ if(st.button("시 작성")):
     with st.spinner("시 작성중 ..."):
         res = chain.run(sub)
         try:
-            response_json = json.loads(res.content)
+            response_json = json.loads(res)
 
             st.markdown(
                 f"""
