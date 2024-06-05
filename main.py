@@ -21,8 +21,8 @@ if(st.button("시 작성")):
         
         st.markdown(
             f"""
-            <p style='color:Blue; font-size: 20px;'>{response_json['head']}</p>
-            <p style='color:Black; font-size: 15px;'>{response_json['body']}</p>
+            <p style='color:Blue; font-size: 30px;'>{response_json['head']}</p>
+            <p style='color:Black; font-size: 20px;'>{response_json['body']}</p>
             <p style='color:Violet; font-size: 15px;'>시도 횟수: {response_json['attempts']}</p>
             <p style='color:Red; font-size: 15px;'>점수: {response_json['rating']}</p>
             <p style='color:Green; font-size: 15px;'>분석: {response_json['reason']}</p>
