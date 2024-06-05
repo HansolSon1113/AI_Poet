@@ -33,7 +33,7 @@ for p_info in subRoute:
     name = p_info["name"]
     prompt_template = p_info["prompt_template"]
     prompt = ChatPromptTemplate.from_template(template=prompt_template)
-    chain = LLMChain(llm=llm, prompt=prompt)
+    chain = LLMChain(llm=chatModel, prompt=prompt)
     destination_chains[name] = chain  
     
 destinations = [f"{p['name']}: {p['description']}" for p in prompt_infos]
