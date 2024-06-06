@@ -91,6 +91,7 @@ st.markdown(f"<p style='color:Gray; font-size: 13px;'>시의 주제: {sub}</p>",
 if(st.button("시 작성")):
     with st.spinner("시 작성중 ..."):
         res = chain.run(sub)
+        print(res)
         try:
             response_json = json.loads(res)
 
@@ -108,8 +109,8 @@ if(st.button("시 작성")):
             st.markdown(
                 f"""
                 <p style='color:Red; font-size: 20px;'>시 생성에 실패했습니다. 다시 시도해주세요.<br>
+                LLM의 응답의 형식이 맞지 않았을 수 있습니다.<br>
                 오류 내용: {e}</p>
-                <p style='color:Gray; font-size: 10px;'>응답 원본: {res}</p>
                 """,
                 unsafe_allow_html=True
             )
