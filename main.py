@@ -85,7 +85,7 @@ chain = MultiPromptChain(router_chain=router_chain,
 
 
 # Main
-sub = st.text_input('시의 주제 혹은 글을 입력하세요(글은 주제를 추출하는 것으로 연관성이 떨어질 수 있습니다.): ')
+sub = st.text_input('시의 주제 혹은 글을 입력하세요(글은 LLM이 주제를 추출하는 것으로 연관성이 떨어질 수 있습니다): ')
 st.markdown(f"<p style='color:Gray; font-size: 13px;'>시의 주제: {sub}</p>", unsafe_allow_html=True)
 
 if(st.button("시 작성")):
