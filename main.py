@@ -107,7 +107,10 @@ if(st.button("시 작성")):
         except Exception as e:
             st.markdown(
                 f"""
-                <p style='color:Red; font-size: 20px;'>시 생성에 실패했습니다. 다시 시도해주세요.<br>이유: {e}</p>
+                <p style='color:Red; font-size: 20px;'>시 생성에 실패했습니다. 다시 시도해주세요.<br>
+                오류 내용: {e}</p>
                 """,
                 unsafe_allow_html=True
             )
+            if(st.button("응답 보기")):
+                st.write(res.content)
