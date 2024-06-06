@@ -91,6 +91,8 @@ st.markdown(f"<p style='color:Gray; font-size: 13px;'>시의 주제: {sub}</p>",
 if(st.button("시 작성")):
     with st.spinner("시 작성중 ..."):
         res = chain.run(sub)
+        if(st.button("응답 보기")):
+            st.write(res.content)
         try:
             response_json = json.loads(res)
 
@@ -112,5 +114,3 @@ if(st.button("시 작성")):
                 """,
                 unsafe_allow_html=True
             )
-            if(st.button("응답 보기")):
-                st.write(res.content)
