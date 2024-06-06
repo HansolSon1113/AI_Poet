@@ -91,7 +91,6 @@ st.markdown(f"<p style='color:Gray; font-size: 13px;'>시의 주제: {sub}</p>",
 if(st.button("시 작성")):
     with st.spinner("시 작성중 ..."):
         res = chain.run(sub)
-        print(res)
         try:
             response_json = json.loads(res)
 
