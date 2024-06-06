@@ -113,4 +113,4 @@ if(st.button("시 작성")):
                 unsafe_allow_html=True
             )
         if(st.button("응답 원문 보기")):
-            st.write(res.content)
+            st.markdown(res)
