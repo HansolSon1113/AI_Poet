@@ -101,6 +101,8 @@ if(st.button("시 작성")):
                 <p style='color:Violet; font-size: 15px;'>시도 횟수: {response_json['attempts']}</p>
                 <p style='color:Orange; font-size: 15px;'>점수: {response_json['rating']}</p>
                 <p style='color:Green; font-size: 15px;'>분석: {response_json['reason']}</p>
+                <br><br>
+                <p style='color:Gray; font-size: 10px;'>응답 원본: {res}</p>
                 """,
                 unsafe_allow_html=True
             )
@@ -109,8 +111,7 @@ if(st.button("시 작성")):
                 f"""
                 <p style='color:Red; font-size: 20px;'>시 생성에 실패했습니다. 다시 시도해주세요.<br>
                 오류 내용: {e}</p>
+                <p style='color:Gray; font-size: 10px;'>응답 원본: {res}</p>
                 """,
                 unsafe_allow_html=True
             )
-        if(st.button("응답 원문 보기")):
-            st.markdown(res)
