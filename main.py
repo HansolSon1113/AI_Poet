@@ -1,6 +1,7 @@
 #pip install python-dotenv, openai, langchain, langchain-openai
 
 #from dotenv import load_dotenv
+#need to set .env file with OPENAI_API_KEY to run locally
 import streamlit as st
 import json
 from langchain_openai import ChatOpenAI
