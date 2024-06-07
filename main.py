@@ -108,9 +108,10 @@ if(st.button("시 작성")):
         except Exception as e:
             st.markdown(
                 f"""
-                <p style='color:Red; font-size: 20px;'>시 생성에 실패했습니다. 다시 시도해주세요.<br>
+                <p style='color:Red; font-size: 20px;'>시 파싱에 실패했습니다.<br>
                 LLM의 응답의 형식이 맞지 않았을 수 있습니다.<br>
-                오류 내용: {e}</p>
+                오류 내용: {e}<br>
+                원문: {res}</p>
                 """,
                 unsafe_allow_html=True
             )
