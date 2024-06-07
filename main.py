@@ -91,7 +91,7 @@ st.markdown(f"<p style='color:Gray; font-size: 13px;'>시의 주제: {sub}</p>",
 if(st.button("시 작성")):
     with st.spinner("시 작성중 ..."):
         res = chain.run(sub)
-        try:
+        #try:
             response_json = json.loads(res)
 
             st.markdown(
@@ -104,7 +104,7 @@ if(st.button("시 작성")):
                 """,
                 unsafe_allow_html=True
             )
-        except Exception as e:
+        #except Exception as e:
             st.markdown(
                 f"""
                 <p style='color:Red; font-size: 20px;'>시 생성에 실패했습니다. 다시 시도해주세요.<br>
