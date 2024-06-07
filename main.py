@@ -92,25 +92,25 @@ if(st.button("시 작성")):
     with st.spinner("시 작성중 ..."):
         res = chain.run(sub)
         print(res)
-        #try:
-        response_json = json.loads(res)
+        try:
+            response_json = json.loads(res)
 
-        st.markdown(
-            f"""
-            {response_json['head']}<br>
-            {response_json['body']}<br><br>
-            <p style='color:Violet; font-size: 15px;'>시도 횟수: {response_json['attempts']}</p>
-            <p style='color:Orange; font-size: 15px;'>점수: {response_json['rating']}</p>
-            <p style='color:Green; font-size: 15px;'>분석: {response_json['reason']}</p>
-            """,
-            unsafe_allow_html=True
-        )
-        #except Exception as e:
-            # st.markdown(
-            #     f"""
-            #     <p style='color:Red; font-size: 20px;'>시 생성에 실패했습니다. 다시 시도해주세요.<br>
-            #     LLM의 응답의 형식이 맞지 않았을 수 있습니다.<br>
-            #     오류 내용: {e}</p>
-            #     """,
-            #     unsafe_allow_html=True
-            # )
+            st.markdown(
+                f"""
+                {response_json['head']}<br>
+                {response_json['body']}<br><br>
+                <p style='color:Violet; font-size: 15px;'>시도 횟수: {response_json['attempts']}</p>
+                <p style='color:Orange; font-size: 15px;'>점수: {response_json['rating']}</p>
+                <p style='color:Green; font-size: 15px;'>분석: {response_json['reason']}</p>
+                """,
+                unsafe_allow_html=True
+            )
+        except Exception as e:
+            st.markdown(
+                f"""
+                <p style='color:Red; font-size: 20px;'>시 생성에 실패했습니다. 다시 시도해주세요.<br>
+                LLM의 응답의 형식이 맞지 않았을 수 있습니다.<br>
+                오류 내용: {e}</p>
+                """,
+                unsafe_allow_html=True
+            )
